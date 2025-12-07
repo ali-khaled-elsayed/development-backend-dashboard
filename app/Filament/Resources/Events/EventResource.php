@@ -36,6 +36,8 @@ class EventResource extends Resource
     protected static ?string $pluralLabel = 'Events';
     protected static ?string $modelLabel = 'Event';
 
+    protected static ?int $navigationSort = 3;
+
     public static function form(Schema $schema): Schema
     {
         return $schema

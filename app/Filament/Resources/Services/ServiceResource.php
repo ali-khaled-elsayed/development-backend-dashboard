@@ -30,6 +30,8 @@ class ServiceResource extends Resource
     protected static ?string $pluralLabel = 'Facilities';
     protected static ?string $modelLabel = 'Facility';
 
+    protected static ?int $navigationSort = 5;
+
     public static function form(Schema $schema): Schema
     {
         return $schema

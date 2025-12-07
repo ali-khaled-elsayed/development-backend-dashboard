@@ -32,6 +32,8 @@ class BlogResource extends Resource
     protected static ?string $pluralLabel = 'Blogs';
     protected static ?string $modelLabel = 'Blog';
 
+    protected static ?int $navigationSort = 2;
+
     public static function form(Schema $schema): Schema
     {
         return $schema

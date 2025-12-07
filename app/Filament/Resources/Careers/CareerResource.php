@@ -34,6 +34,8 @@ class CareerResource extends Resource
     protected static ?string $pluralLabel = 'Careers';
     protected static ?string $modelLabel = 'Career';
 
+    protected static ?int $navigationSort = 4;
+
     public static function form(Schema $schema): Schema
     {
         return $schema->schema([

@@ -34,6 +34,7 @@ class LocationResource extends Resource
     protected static ?string $navigationLabel = 'Locations';
     protected static ?string $pluralLabel = 'Cities';
     protected static ?string $modelLabel = 'City';
+    protected static ?int $navigationSort = 6;
 
     public static function form(Schema $schema): Schema
     {

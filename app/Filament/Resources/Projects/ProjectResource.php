@@ -42,6 +42,8 @@ class ProjectResource extends Resource
     protected static ?string $pluralLabel = 'Projects';
     protected static ?string $modelLabel = 'Project';
 
+    protected static ?int $navigationSort = 1;
+
     public static function form(Schema $schema): Schema
     {
         return $schema->schema([

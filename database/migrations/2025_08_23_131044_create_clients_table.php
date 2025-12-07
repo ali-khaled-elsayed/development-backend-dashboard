@@ -22,7 +22,7 @@ return new class extends Migration
 
             $table->foreignId('city_id')->constrained('cities');
             $table->foreignId('area_id')->constrained('areas');
-            $table->foreignId('project_id')->constrained('projects');
+            $table->foreignId('project_id')->nullable()->constrained('projects')->nullOnDelete();
             $table->timestamps();
         });
     }
