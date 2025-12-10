@@ -105,10 +105,12 @@ class ProjectResource extends Resource
                 ->schema([
                     FileUpload::make('logo')
                         ->image()
+                        ->disk('public')
                         ->directory('projects/logos'),
 
                     FileUpload::make('master_plan')
                         ->image()
+                        ->disk('public')
                         ->directory('projects/master_plans'),
 
                     TextInput::make('video_link'),
