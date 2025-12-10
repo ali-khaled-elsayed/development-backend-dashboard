@@ -68,29 +68,27 @@ class ClientService
 
     private function sendClientToCrm($client)
     {
-        $url = 'https://crm.domain.com/api/register_landingpage';
+        $url = 'https://crm.leaderdevelop.com/api/register_landingpage';
 
         try {
-            $response = Http::asMultipart()->post($url, [
-                ['name' => 'title',       'contents' => 'mr'],
-                ['name' => 'name',        'contents' => $client->name],
-                ['name' => 'mobile',      'contents' => $client->phone],
-                ['name' => 'email',       'contents' => $client->email],
-                ['name' => 'fromwhere',   'contents' => $client->city->name_en ?? 'landing'],
-                ['name' => 'applink_id',  'contents' => $client->id],
+            $response = Http::asForm()->post($url, [
+                // 'title'      => 'mr',
+                'name'       => $client->name,
+                'mobile'     => $client->phone,
+                'email'      => $client->email,
+                'fromwhere'  => 'landing',
+                'applink_id' => 10,
             ]);
 
             if ($response->failed()) {
-                Log::error('CRM Client Sync Failed', [
-                    'client_id' => $client->id,
-                    'status'    => $response->status(),
-                    'crm_body'  => $response->body(),
+                Log::error('CRM Sync Failed', [
+                    'status' => $response->status(),
+                    'body'   => $response->body(),
                 ]);
             }
         } catch (\Exception $e) {
             Log::error('CRM API Error', [
-                'message'   => $e->getMessage(),
-                'client_id' => $client->id,
+                'message' => $e->getMessage(),
             ]);
         }
     }
