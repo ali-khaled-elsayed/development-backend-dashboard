@@ -19,7 +19,7 @@ class CreateEventRequest extends FormRequest
             'end_time' => 'nullable|date_format:H:i',
 
             'galleries' => 'nullable|array',
-            'galleries.*.file' => 'required|file|mimes:jpg,jpeg,png,webp,mp4,mov,avi|max:10240',
+            'galleries.*.file' => 'required|file|mimes:jpg,jpeg,png,webp,mp4,mov,avi',
             'galleries.*.type' => 'required|in:image,video',
 
         ];
