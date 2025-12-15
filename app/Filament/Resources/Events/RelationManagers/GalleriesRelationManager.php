@@ -30,7 +30,7 @@ class GalleriesRelationManager extends RelationManager
                     ->multiple()
                     ->disk('public')
                     ->directory('galleries')
-                    ->maxSize(102400)
+                    ->maxSize(2097152)
                     ->required()
                     ->acceptedFileTypes(['image/*', 'video/mp4'])
                     ->previewable(true),
