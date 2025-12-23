@@ -60,7 +60,7 @@ class ClientService
             'phone' => $request['phone'],
             'city_id' => $request['cityId'],
             'area_id' => $request['areaId'],
-            'project_id' => $request['projectId'],
+            'project_id' => $request['projectId'] ?? null,
         ];
 
         return $clientModel;

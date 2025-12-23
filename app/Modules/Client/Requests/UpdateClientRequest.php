@@ -16,7 +16,7 @@ class UpdateClientRequest extends FormRequest
             'unitType' => 'required|string',
             'cityId' => 'required|exists:cities,id',
             'areaId' => 'required|exists:areas,id',
-            'projectId' => 'required|exists:projects,id',
+            'projectId' => 'nullable|exists:projects,id',
         ];
     }
 }
